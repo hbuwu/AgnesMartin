@@ -1,0 +1,107 @@
+@import "reset_plus.scss";
+
+/* Why not try a few variables :-) */
+
+$color-main: #333; // black
+$color-light: rgb(224, 224, 224); // grey
+$color-accent: #d1e4ff; // blue
+$color-accent2: #0061a1;
+
+@mixin title {
+	font-family: coniferous, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-align: center;
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+@mixin highlight {
+	font-family: caflisch-script-pro, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	color: $color-accent2;
+}
+
+body {
+	color: $color-main;
+	font-family: ariana-pro, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.8vh;
+	margin: 2rem auto 0;
+	line-height: 2.4rem;
+	text-align: justify;
+}
+
+h1 {
+	@include title;
+	font-size: 4rem;
+}
+
+h2 {
+	@include title;
+	font-size: 3rem;
+}
+
+.highlight {
+	@include highlight;
+	font-size: 1.7rem;
+}
+
+.colored1 {
+	padding: 3rem 15vw;
+	background-color: $color-accent;
+}
+
+.colored2 {
+	padding: 3rem 15vw;
+}
+
+p {
+	margin: 2rem 0;
+}
+
+@media (min-width: 765px) {
+
+	.colored1 {
+		padding: 3rem 25vw;
+		background-color: $color-accent;
+	}
+	
+	.colored2 {
+		padding: 3rem 25vw;
+	}
+}
+
+@media (min-width: 1025px) {
+	body {
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		font-size: 1.5vh;
+		max-width: 125rem;
+		margin: 5rem auto 0;
+	}
+	h1 {
+		grid-column: 1/4;
+		margin-bottom: 7rem;
+		font-size: 7rem;
+	}
+
+	.colored1 {
+		padding: 3rem 2vw;
+		background-color: $color-accent;
+		transition-duration: 0.5s;
+	}
+	
+	.colored2 {
+		padding: 3rem 2vw;
+		background-color: $color-light;
+		transition-duration: 0.5s;
+	}
+
+	.colored1:hover, .colored2:hover{
+		transform: scale(1.04);
+		transition-duration: 0.5s;
+	}
+}
